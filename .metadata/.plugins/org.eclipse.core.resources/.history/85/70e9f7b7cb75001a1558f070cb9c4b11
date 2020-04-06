@@ -1,0 +1,84 @@
+package sample.sample.com;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class MouseHover2 {
+
+	public WebDriver driver;
+
+	@BeforeTest
+	public void start() throws InterruptedException {
+
+		// Set system properties for Chrome Driver
+		System.setProperty("webdriver.chrome.driver", "C:\\TestAutomation\\Grid\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+
+		// Adding wait
+		Thread.sleep(2000);
+
+	}
+
+	@Test
+	public void openBrowser() throws InterruptedException {
+
+		// Launch the URL
+		driver.get("http://demoqa.com/menu/");
+		System.out.println("demoqa webpage Displayed");
+
+		// This line maximizes the browser window
+		driver.manage().window().maximize();
+
+		// Adding wait
+		Thread.sleep(2000);
+
+		// Instantiate Action Class
+		Actions actions = new Actions(driver);
+		// Retrieve WebElement 'Music' to perform mouse hover
+		WebElement menuOption = driver.findElement(By.xpath(".//div[contains(text(),'Music')]"));
+		// Mouse hover menuOption 'Music'
+		actions.moveToElement(menuOption).perform();
+		System.out.println("Done Mouse hover on 'Music' from Menu");
+
+		// Adding wait
+		Thread.sleep(2000);
+
+		// Now Select 'Rock' from sub menu which has got displayed on mouse
+		// hover of 'Music'
+		WebElement subMenuOption = driver.findElement(By.xpath("//div[@id='ui-id-10']"));
+		// Mouse hover menuOption 'Rock'
+		actions.moveToElement(subMenuOption).perform();
+		/* actions.moveToElement(subMenuOption).click().perform(); */
+		System.out.println("Done Mouse hover on 'Rock' from Menu");
+
+		// Adding wait
+		Thread.sleep(2000);
+
+		// Now , finally, it displays the desired menu list from which required
+		// option needs to be selected
+		// Now Select 'Alternative' from sub menu which has got displayed on
+		// mouse hover of 'Rock'
+		WebElement selectMenuOption = driver.findElement(By.xpath(".//div[contains(text(),'Alternative')]"));
+		selectMenuOption.click();
+		System.out.println("Selected 'Alternative' from Menu");
+
+		// Adding wait
+		Thread.sleep(2000);
+
+	}
+
+	@AfterTest
+	public void closeBrowser() {
+
+		// Close the main window
+		driver.close();
+
+	}
+
+}

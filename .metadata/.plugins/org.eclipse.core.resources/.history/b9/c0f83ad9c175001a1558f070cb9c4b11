@@ -1,0 +1,26 @@
+package sample.sample.com;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+public class MouseOver {
+	
+	public WebDriver driver;
+	@BeforeTest
+	public void start() {
+
+		// launching the Chrome browser
+		System.setProperty("webdriver.chrome.driver", "C:\\TestAutomation\\Grid\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+
+		driver.navigate().to("https://yahoo.com");
+		// Maximize the window
+		driver.manage().window().maximize();
+		
+		//Adding wait 
+
+	}
+
+
+}

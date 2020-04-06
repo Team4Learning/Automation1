@@ -1,0 +1,23 @@
+package sample.sample.com;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+public class MouseHover1 {
+
+	public WebDriver driver;
+
+	@BeforeTest
+	public void start() throws InterruptedException {
+
+		// Set system properties for Chrome Driver
+		System.setProperty("webdriver.chrome.driver", "C:\\TestAutomation\\Grid\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+
+		// Adding wait
+		Thread.sleep(2000);
+
+	}
+
+}

@@ -1,0 +1,41 @@
+package sample.sample.com;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class MouseOver {
+
+	public WebDriver driver;
+
+	@BeforeTest
+	public void start() {
+
+		// Set system properties for geckodriver
+		System.setProperty("webdriver.chrome.driver", "C:\\TestAutomation\\Grid\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+
+		// Adding wait
+		driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+
+	}
+
+	@Test
+	public void openBrowser() throws InterruptedException {
+
+
+		 // Launch the URL 
+		driver.get("https://yahoo.com");
+
+		// This line maximizes the browser window
+		driver.manage().window().maximize();
+		
+		//Adding wait 
+				driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+
+
+
+}

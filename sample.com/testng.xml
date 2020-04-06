@@ -7,10 +7,15 @@
 			<!-- <class name="sample.sample.com.TestC" /> -->
 
 			<!-- <class name="sample.sample.com.LocateById" /> -->
-			<class name="sample.sample.com.CssSelector" />
+			<!-- <class name="sample.sample.com.CssSelector" /> -->
+
+			<!-- <class name="sample.sample.com.MouseHover" /> -->
+			<!-- <class name="sample.sample.com.MouseHover1" /> -->
+			<!-- <class name="sample.sample.com.MouseHover2" /> -->
+			<class name="sample.sample.com.MouseHover3" />
 
 
-			
+
 		</classes>
 	</test>
 </suite>
